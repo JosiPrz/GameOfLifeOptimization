@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import multiprocessing as mp
 
 class GameOfLife:
     def __init__(self, rows, cols, initial_state=None):
@@ -53,7 +54,23 @@ class GameOfLife:
         ani = animation.FuncAnimation(fig, update, frames=steps, interval=100, blit=True)
         plt.title("Juego de la vida")
         plt.show()
+    
+    
+    def parallel_step(self):
+        with mp.Pool(mp.cpu_count()) as pool:
+            results = pool.map(self.process_cell, [(i, j) for i in range(self.rows) for j in range(self.cols)])
+            new_board = np.zeros_like(self.board)
+            for (i, j), state in results:
+                new_board[i, j] = state
+            self.board = new_board
 
+    def process_cell(self, pos):
+        x, y = pos
+        alive_neighbors = self.count_alive_neighbors(x, y)
+        if self.board[x, y] == 1:
+            return (x, y), 1 if alive_neighbors in [2, 3] else 0
+        else:
+            return (x, y), 1 if alive_neighbors == 3 else 0
 
 if __name__ == "__main__":
     rows, cols = 50, 50  # Tamaño de la grilla

@@ -1,7 +1,8 @@
 import cProfile
 import pstats
 import io
-from game_of_life import GameOfLife 
+
+from game_of_life  import GameOfLife 
 
 def main():
     rows, cols = 512, 512  # Tamaño de la grilla

@@ -19,16 +19,24 @@ En este repositorio encontrarás dos archivos principales:
 - Descripción: Este archivo realiza pruebas de rendimiento variando el tamaño de la grilla. Genera una visualización log-log que muestra una gráfica del tiempo promedio por iteración en función del tamaño de entrada (número de celdas).
 - Cómo Ejecutar: Para ejecutar el código de pruebas de rendimiento, abre la terminal y usa el siguiente comando: python rendimiento.py
 
+3. Perfilador
+- Archivo: g_profileC.py
+- Descripción: Muestra los tiempos de ejecucion de cada funcion en game_of_life.py para identificar posibles cuellos de botella.
+
+4. Analisis de escalabilidad fuerte 
+- Archivo: strong_scalability_analysis.py
+- Descripción: Aplica paralelismo, varia el numero nucleos y muestra los resultados en graficas para saber determinar el speedup, eficiencia y analizar la ganacia .
+- 
+
+5. Analisis de escalabilidad debil
+- Archivo: weak_scalability_analysis.py
+- Descripción: Se aumenta el número de nucleos, escala proporcionalmente el tamaño de la grilla y muestra los resultados en graficas para saber determinar el el tiempo de ejecucion asi como la eficiencia.
+
 ## Requisitos
 
-Asegúrate de tener instaladas las siguientes bibliotecas antes de ejecutar los archivos:
+Asegúrate de tener instaladas las siguientes bibliotecas especificadas en el archivo requirements.txt
 
-numpy
-matplotlib
-
-Puedes instalarlas usando pip:
-
-pip install numpy matplotlib
+Puedes instalarlas desde la terminal usando el comando: pip install -r requirements.txt
 
 ## Notas
 Asegúrate de estar en el directorio correcto donde se encuentran los archivos antes de ejecutar los comandos.
