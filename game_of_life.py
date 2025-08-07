@@ -12,6 +12,7 @@ class GameOfLife:
         else:
             self.board = initial_state
 
+    # @profile
     def step(self):
         new_board = self.board.copy()
         for i in range(self.rows):

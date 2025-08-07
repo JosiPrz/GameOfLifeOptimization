@@ -1,0 +1,14 @@
+         235725002 function calls in 131.397 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000  131.397  131.397 c:\Users\perez.j.67\Documents\ULEAD\GameOfLife-Tarea-1-\game_of_life.py:39(run)
+      100    9.393    0.094  131.397    1.314 c:\Users\perez.j.67\Documents\ULEAD\GameOfLife-Tarea-1-\game_of_life.py:15(step)
+ 26214400   91.522    0.000  121.994    0.000 c:\Users\perez.j.67\Documents\ULEAD\GameOfLife-Tarea-1-\game_of_life.py:28(count_alive_neighbors)
+104755200   15.347    0.000   15.347    0.000 {built-in method builtins.min}
+104755200   15.125    0.000   15.125    0.000 {built-in method builtins.max}
+      100    0.010    0.000    0.010    0.000 {method 'copy' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
