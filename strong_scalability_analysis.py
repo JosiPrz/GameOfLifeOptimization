@@ -20,6 +20,7 @@ def main():
     # Medir el tiempo para el juego secuencial - T1
     single_process_game = GameOfLife(rows, cols)
     T1 = measure_performance(single_process_game, steps, 1)  # T1
+    results = []
     speeds = []
     efficiencies = []
     max_processes = mp.cpu_count()
@@ -32,6 +33,15 @@ def main():
         efficiency = speedup / p
         speeds.append(speedup)
         efficiencies.append(efficiency)
+        
+        # Almacenar resultados en la lista
+        results.append((p, speedup, efficiency))
+
+    # Imprimir tabla de resultados
+    print(f"{'Número de Procesos (p)':<25}{'Speedup':<25}{'Eficiencia':<15}")
+    for p, speedup, eff in results:
+        print(f"{p:<25}{speedup:.2f} s{eff:<15.2f}")
+
 
     # Graficar resultados
     plt.figure(figsize=(12, 5))

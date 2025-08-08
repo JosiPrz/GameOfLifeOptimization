@@ -11,6 +11,7 @@ def measure_performance(game, steps):
 
 def main():
     steps = 100
+    results = []
     speeds = []
     efficiencies = []
     max_processes = mp.cpu_count()
@@ -29,6 +30,14 @@ def main():
 
         speeds.append(Tp)
         efficiencies.append(efficiency)
+
+        # Almacenar resultados en la lista
+        results.append((p, Tp, efficiency))
+
+    # Imprimir tabla de resultados
+    print(f"{'Número de Procesos (p)':<25}{'Tiempo de Ejecución (Tp)':<25}{'Eficiencia':<15}")
+    for p, tp, eff in results:
+        print(f"{p:<25}{tp:.2f} s{eff:<15.2f}")
 
     # Graficar resultados
     plt.figure(figsize=(12, 5))
